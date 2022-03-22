@@ -25,4 +25,4 @@ def save_flange(request):
 def get_torque(request, aks_number, flange_number):
     flange = Flange.objects.get(flange_number=flange_number)
     torque = flange.torque
-    return HttpResponse(f"Der Flansch Nr. {flange_number} von {aks_number} ist mit {torque} Nm anzuziehen.")
+    return HttpResponse(f"<h1>Der Flansch Nr. {flange_number} von {aks_number} ist mit {torque} Nm anzuziehen.</h1>")
