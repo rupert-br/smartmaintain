@@ -11,7 +11,7 @@ def index(request):
     return render(request, 'qrcodes/index.html')
 
 def save_flange(request):
-    img = qrcode.make(f"get_torque/{request.POST['aks-number']}/{request.POST['flange-number']}")
+    img = qrcode.make(f"https://smartmaintain.herokuapp.com/qrcodes/get_torque/{request.POST['aks-number']}/{request.POST['flange-number']}")
     img.save(f"media/{request.POST['aks-number']}_{request.POST['flange-number']}.png")
     f = Flange(
         flange_number = int(request.POST['flange-number']),
